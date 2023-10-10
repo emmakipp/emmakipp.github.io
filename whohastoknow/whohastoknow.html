@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link href="css/if.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	
+<h1>Some Memorable Movies</h1>
+	<h3><span class="ital">Who Has to Know</span> (Emma Kipp, 2022)</h3>
+	
+<div class="sideBySide">
+<img class="filmStill" src="images/whohastoknow_1.jpg" onClick="onClick_DTRT_img01()" alt="Who Has to Know">
+<img class="filmStill" src="images/whohastoknow_2.jpg" onClick="onClick_DTRT_img02()" alt="Who Has to Know">
+<img class="filmStill" src="images/whohastoknow_3.jpg" onClick="onClick_DTRT_img03()" alt="Who Has to Know">
+
+</div>
+
+<p class="filmInfo" id="DTRT_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus rerum officiis quia impedit est perspiciatis beatae molestiae libero praesentium nisi eaque recusandae sunt adipisci ipsa quos neque porro, ipsam, deserunt harum? Labore laudantium omnis aperiam eveniet, placeat rem exercitationem totam iusto repudiandae nihil, molestiae in, voluptatibus. Quia accusantium, nisi inventore.</p>
+	
+<button type="button" onClick="gotoMovie()" id="gotoMovie_btn">Go to the film</button>
+
+</body>
+<script>
+	
+var gotoMovie_btn = document.getElementById("gotoMovie_btn");
+gotoMovie_btn.style.visibility = "hidden";
+
+var img01_clicked = false;
+var img02_clicked = false;
+var img03_clicked = false;
+
+var DTRT_text = document.getElementById("DTRT_text");
+	
+var DTRT00 = "Who Has to Know was my first film I created that required a team. All of my other films were just made by myself. WHTK had a total of 5 characters on the screen, as well as a team of 4 behind the camera. Submitted as a final film in my freshman year, WHTK is still to this day one of my favorite films I have made.";
+	
+DTRT_text.innerHTML = DTRT00;
+	
+var DTRT01 = "Pictured in this photo, is J. Jackson Vining. I posted a casting call in a film-theater group, and he was the first one to respond. He turned out perfect for the role of Jonah. The opening sequence features Jonah realizing what he has done. Jackson and I continue to talk and hangout to this day thanks to this film, and he is featured in my new film that is still in the works."
+	
+function onClick_DTRT_img01(){
+	DTRT_text.innerHTML = DTRT01;
+	img01_clicked = true;
+	console.log("img01_clicked = " + img01_clicked);
+	revealButton();
+}
+	
+var DTRT02 = "Shown in this photo are two characters. On the right in the white hoodie is Henry played by Brillan Gugel, and on the left is Jonah played by J. Jackson Vining. Henry is one of Jonah's friends, trying to help his friend through the death of his girlfriend. Throughout the short 5 minute film, 2 friends are shown as support systems for Jonah, but it is unkown to either the real cause of Jonah's girlfriend's death."
+	
+function onClick_DTRT_img02(){
+	DTRT_text.innerHTML = DTRT02;
+	img02_clicked = true;
+	console.log("img02_clicked = " + img02_clicked);
+	revealButton();
+}
+
+var DTRT03 = "Shown in this photo is Lauren, played by Crystal Chapman. This sequence in WHTK is part of Jonah's night terror. He is shown his deceased girlfriend, haunting him in his dream. Only Jonah knows the true cause of Lauren's death, and this dream sort of kicks him into gear, making him realize he has to get rid of the murder weapon."	
+	
+function onClick_DTRT_img03(){
+	DTRT_text.innerHTML = DTRT03;
+	img03_clicked = true;
+	console.log("img03_clicked = " + img03_clicked);
+	revealButton();
+}
+
+function revealButton(){
+	if (img01_clicked && img02_clicked && img03_clicked){
+		console.log("REVEAL BUTTON");
+		gotoMovie_btn.style.visibility = "visible";
+	}
+}
+	
+function gotoMovie(){
+	window.open("https://youtu.be/MGcNpyb2lsE", "_blank");
+}
+	
+</script>
+</html>
