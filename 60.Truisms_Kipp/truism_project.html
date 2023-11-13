@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link href="css/mists_vid.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	
+<div>
+  <video id="displayed_video" muted="muted" autoplay="autoplay" loop="loop" >
+    <source src="video/truism_compressed.mp4" type="video/mp4">
+  </video>
+</div>
+	
+<div class="centered_text">
+<h1 id="truism" onmouseover="OnTruismText()" onmouseout="outTruismText()" onClick="changeVideo()">Listen When Your Body Talks</h1>
+</div>
+		
+	
+<script>
+	
+// stuff for sound
+	
+var mySound = new Audio("sounds/background.mp3");
+	
+// reference to video element
+	
+var channel = 1;
+var pausedAt = 0;
+var displayed_video = document.getElementById("displayed_video");	
+	
+// references to the videos
+	
+var backpack = "video/truism_compressed.mp4";
+var computer = "video/truism2_compressed.mp4";
+var channel = 1;
+
+function OnTruismText(){
+	document.getElementById("displayed_video").style.filter = "grayscale(100%)";
+}
+	
+function outTruismText(){
+	document.getElementById("displayed_video").style.filter = "grayscale(0%)";
+}
+	
+function changeVideo(){
+	console.log("will change video");
+	pausedAt = displayed_video.currentTime;
+	if (channel == 0){
+		displayed_video.src = backpack;
+		displayed_video.currentTime = pausedAt;
+		channel = 1;
+	}
+	else{
+		displayed_video.src = computer;
+		displayed_video.currentTime = pausedAt;
+		channel = 0;
+	}
+	mySound.play();
+}
+</script>
+
+</body>
+</html>
