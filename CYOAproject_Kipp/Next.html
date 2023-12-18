@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Choices</title>
+<link href="css/cyoa.css" rel="stylesheet" type="text/css">
+</head>
+
+<!-- THE TITLE ABOVE THE VIDEO -->
+
+<h1>Your makeup is done!</h1>
+	
+<!-- THE CAPTION or PARAGRAPH UNDERNEATH THE VIDEO -->
+
+<p id="caption">
+How many points do you have?</p>
+	
+<!-- THE TWO BUTTONS UNDERNEATH THE CAPTION - CAN EASILY ADD MORE BUTTONS -->
+
+<div id="DIVforButtons">
+<p>
+<button id="topBTN" onClick="buttonOne()">9-10
+</button>  
+</p>    
+<p>
+<button id="bottomBTN" onClick="buttonTwo()">Less than 8
+</button>    
+</p>
+</div>
+	
+<script>
+
+    document.getElementById('displayedVideo').addEventListener('ended',whenVideoEnds,false);
+        
+    var topBTN = document.getElementById("topBTN");
+    var bottomBTN = document.getElementById("bottomBTN"); 
+   
+    var caption = document.getElementById("caption");    
+
+    caption.style.display = 'none';    
+    topBTN.style.display = 'none';
+    bottomBTN.style.display = 'none';        
+
+    function whenVideoEnds(e) {
+		// these three commands make the caption and the 2 buttons visible
+        caption.style.display = 'block';    
+        topBTN.style.display = 'block';
+        bottomBTN.style.display = 'block';
+    }
+        
+	// MAKE SURE THE WINDOW OPENS THE FILE NAME on YOUR DIRECTORY 
+    function buttonOne() {
+        window.open ('9-10.html','_self',false)
+    }
+        
+    function buttonTwo() {
+        window.open ('LessThan8.html','_self',false)
+    }    
+	
+</script>
+	
+<body>
+</body>
+</html>

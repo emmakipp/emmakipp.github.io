@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Choices</title>
+<link href="css/cyoa.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	
+<!-- THE TITLE ABOVE THE VIDEO -->
+
+<h1>You don’t lose any points! Eyeliner can be used for an everyday look, or it cannot be. It's up to you and won't change anything.</h1>
+
+<!-- THE VIDEO -->
+	
+<div class = "vidCenter">
+<video id="displayedVideo" preload="auto" controls>
+<source src="video/11.2.mp4" type="video/mp4">
+</video>	
+</div>
+	
+<!-- THE CAPTION or PARAGRAPH UNDERNEATH THE VIDEO -->
+
+<p id="caption">
+Which mascara will you use today?</p>
+	
+<!-- THE TWO BUTTONS UNDERNEATH THE CAPTION - CAN EASILY ADD MORE BUTTONS -->
+
+<div id="DIVforButtons">
+<p>
+<button id="topBTN" onClick="buttonOne()">Essence Mascara
+</button>  
+</p>    
+<p>
+<button id="bottomBTN" onClick="buttonTwo()">Etsee Lauder Mascara
+</button>    
+</p>
+</div>
+	
+<script>
+
+    document.getElementById('displayedVideo').addEventListener('ended',whenVideoEnds,false);
+        
+    var topBTN = document.getElementById("topBTN");
+    var bottomBTN = document.getElementById("bottomBTN"); 
+   
+    var caption = document.getElementById("caption");    
+
+    caption.style.display = 'none';    
+    topBTN.style.display = 'none';
+    bottomBTN.style.display = 'none';        
+
+    function whenVideoEnds(e) {
+		// these three commands make the caption and the 2 buttons visible
+        caption.style.display = 'block';    
+        topBTN.style.display = 'block';
+        bottomBTN.style.display = 'block';
+    }
+        
+	// MAKE SURE THE WINDOW OPENS THE FILE NAME on YOUR DIRECTORY 
+    function buttonOne() {
+        window.open ('12.1.html','_self',false)
+    }
+        
+    function buttonTwo() {
+        window.open ('12.2.html','_self',false)
+    }    
+	
+</script>
+	
+</body>
+</html>
